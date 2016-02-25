@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B112E8D5-15CB-4CD3-A86F-95F2F090517C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>laba12</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\systemc-2.3.1\systemc-2.3.1\src;C:\Users\WIT\Documents\Visual Studio 2015\Projects\laba1-2\laba1-2</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\scfx_mant.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\scfx_pow10.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\scfx_rep.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\scfx_utils.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_attribute.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_bit.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_bv_base.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_clock.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_concatref.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_cor_fiber.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_cthread_process.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_event.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_event_finder.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_event_queue.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_except.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_export.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_fxcast_switch.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_fxdefs.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_fxnum.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_fxnum_observer.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_fxtype_params.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_fxval.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_fxval_observer.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_hash.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_int32_mask.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_int64_io.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_int64_mask.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_interface.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_int_base.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_join.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_length_param.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_list.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_logic.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_lv_base.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_main.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_main_main.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_mempool.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_method_process.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_module.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_module_name.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_module_registry.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_mutex.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_name_gen.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_nbdefs.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_nbexterns.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_nbutils.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_object.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_object_manager.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_phase_callback_registry.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_port.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_pq.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_prim_channel.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_process.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_report.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_report_handler.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_reset.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_semaphore.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_sensitive.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_signal.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_signal_ports.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_signal_resolved.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_signal_resolved_ports.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_signed.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_simcontext.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_spawn_options.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_stop_here.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_string.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_thread_process.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_time.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_trace.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_trace_file_base.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_uint_base.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_unsigned.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_utils_ids.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_value_base.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_vcd_trace.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_vector.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_ver.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_wait.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_wait_cthread.obj" />
+    <Object Include="..\..\..\..\..\..\..\systemc-2.3.1\systemc-2.3.1\msvc80\SystemC\Debug\sc_wif_trace.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="adder.h" />
+    <ClInclude Include="check.h" />
+    <ClInclude Include="stim.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sc_main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
