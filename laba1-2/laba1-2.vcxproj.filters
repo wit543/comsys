@@ -107,6 +107,9 @@
     <ClInclude Include="check.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="alu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sc_main.cpp">
