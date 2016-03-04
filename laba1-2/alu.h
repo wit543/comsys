@@ -36,7 +36,39 @@ SC_MODULE(alu) {
 	}
 
 	void run(/* arguments */) {
-		
+		AND();
+		OR();
+		NOTA();
+		sum_xor =XOR(ain.read(),bin.read());
+		sum_stl[0] = lflagB;
+		if (control.read() == 0) {
+			sum.write(sum_add);
+			lflag.write(lflagA);
+			oflag.write(oflagA);
+			zflag.write(zflagA);
+		}
+		if (control.read() == 1) {
+			sum.write(sum_sub);
+			lflag.write(lflagA);
+			oflag.write(oflagA);
+			zflag.write(zflagA);
+		}
+		if (control.read() == 2) {
+			sum.write(sum_xor);
+		}
+		if (control.read() == 3) {
+			sum.write(sum_and);
+		}
+		if (control.read() == 4) {
+			sum.write(sum_or);
+		}
+		if (control.read() == 5) {
+			sum.write(sum_nota);
+		}
+		if (control.read() == 6) {
+			sum.write(sum_stl);
+			lflag.write(lflagB);
+		}
 	}
 
 	SC_CTOR(alu): DUT("add") ,SUBB("sub"){
