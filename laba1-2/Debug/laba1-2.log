@@ -1,1 +1,6 @@
-﻿  laba1-2.vcxproj -> C:\Users\WIT\Documents\Visual Studio 2015\Projects\laba1-2\Debug\laba1-2.exe
+﻿  sc_main.cpp
+  Unknown compiler version - please run the configure tests and report the results
+c:\users\wit\documents\visual studio 2015\projects\laba1-2\laba1-2\adder.h(34): warning C4805: '^': unsafe mix of type 'sc_dt::uint64' and type 'sc_core::sc_in<bool>::data_type' in operation
+c:\users\wit\documents\visual studio 2015\projects\laba1-2\laba1-2\check.h(30): warning C4244: 'initializing': conversion from 'sc_dt::uint_type' to 'int', possible loss of data
+c:\users\wit\documents\visual studio 2015\projects\laba1-2\laba1-2\check.h(47): warning C4805: '==': unsafe mix of type 'sc_core::sc_in<bool>::data_type' and type 'sc_dt::uint64' in operation
+  laba1-2.vcxproj -> C:\Users\WIT\Documents\Visual Studio 2015\Projects\laba1-2\Debug\laba1-2.exe
