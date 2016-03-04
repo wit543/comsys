@@ -46,6 +46,19 @@ int sc_main(int argc, char* argv[])
 	//DUT.as(as);
 	//DUT.lflag(lflag);
 
+	alu ALU1("alu");
+	ALU1.ain(ain);
+	ALU1.bin(bin);
+	sc_uint<4> sig;
+	sig[0] = false;
+	control.write(sig);
+	ALU1.control(control);
+	ALU1.sum(sum);
+	ALU1.lflag(lflag);
+	ALU1.oflag(oflag);
+	ALU1.zflag(zflag);
+
+
 	stim STIM("stimulus");              // Instantiate stimulus generator
 	STIM.clk(clk);
 	STIM.ain(ain);
@@ -66,18 +79,7 @@ int sc_main(int argc, char* argv[])
 	CHECK.lflag(lflag);
 
 	
-	alu ALU1("alu");
-	ALU1.ain(ain);
-	ALU1.bin(bin);
-	sc_uint<4> sig;
-	sig[0] = false;
 
-	control.write(sig);
-	ALU1.control(control);
-	ALU1.sum(sum);
-	ALU1.lflag(lflag);
-	ALU1.oflag(oflag);
-	ALU1.zflag(zflag);
 
 	// ALU.sum_add(sum_add);
 	// ALU.sum_sub(sum_sub);
