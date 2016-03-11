@@ -1,6 +1,6 @@
 //------------------------------------------------------------------
 // Simple Testbench for 4-bits adder file
-// 
+//
 // SystemC for VHDL engineers
 // (c)www.ht-lab.com
 //------------------------------------------------------------------
@@ -10,15 +10,15 @@
 #include "adder.h"
 #include "stim.h"
 #include "check.h"
-#include "alu.h"
+#include "multiply.h"
 
 int sc_main(int argc, char* argv[])
 {
 	sc_signal<sc_uint<16> > ain, bin, sum;
+	sc_signal<sc_uint<32>> out;
 	sc_signal<bool> ci, co;
 	sc_signal<bool> zflag, oflag, lflag;
 	sc_signal<bool> as;
-	sc_signal<sc_uint<4> > control;
 	sc_clock clk("clk", 10, SC_NS, 0.5);   // Create a clock signal
 
 
@@ -35,30 +35,17 @@ int sc_main(int argc, char* argv[])
 	sc_trace(fp, lflag, "lflag");
 	sc_trace(fp, clk, "clk");
 
-	//add_sub DUT("add_sub");                 // Instantiate Device Under Test
-	//DUT.ain(ain);                       // Connect ports
-	//DUT.bin(bin);
-	//DUT.ci(ci);
-	//DUT.sum(sum);
-	//DUT.oflag(oflag);
-	//DUT.zflag(zflag);
-	//DUT.co(co);
-	//DUT.as(as);
-	//DUT.lflag(lflag);
-
-	alu ALU1("alu");
-	ALU1.ain(ain);
-	ALU1.bin(bin);
-	sc_uint<4> sig;
-	sig[0] = false;
-	control.write(sig);
-	ALU1.control(control);
-	ALU1.sum(sum);
-	ALU1.lflag(lflag);
-	ALU1.oflag(oflag);
-	ALU1.zflag(zflag);
 
 
+	multiplier mul("multiplier");
+	mul.ain(ain);
+	mul.bin(bin);
+	mul.out(out);
+
+	ain.write(4);
+	bin.write(3);
+
+	/*
 	stim STIM("stimulus");              // Instantiate stimulus generator
 	STIM.clk(clk);
 	STIM.ain(ain);
@@ -71,25 +58,14 @@ int sc_main(int argc, char* argv[])
 	CHECK.ain(ain);
 	CHECK.bin(bin);
 	CHECK.ci(ci);
-	CHECK.sum(sum);
+	CHECK.sum(out);
 	CHECK.oflag(oflag);
 	CHECK.zflag(zflag);
 	CHECK.co(co);
 	CHECK.as(as);
-	CHECK.lflag(lflag);
-
-	
-
-
-	// ALU.sum_add(sum_add);
-	// ALU.sum_sub(sum_sub);
-	// ALU.sum_xor(sum_xor);
-	// ALU.sum_add(sum_add);
-	// ALU.sum_or(sum_or);
-	// ALU.sum_nota(sum_nota);
-	// ALU.sum_stl(sum_stl);
+	CHECK.lflag(lflag);*/
 
 	sc_start(100, SC_NS);               // Run simulation
-
+	cout << ain << "*" << bin << "=" << out;
 	return 0;                           // Return OK, no errors.
 }

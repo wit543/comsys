@@ -10,11 +10,14 @@
 #include <systemc.h>
 
 SC_MODULE(add_sub) {
-	sc_in<sc_uint<16>> ain, bin;
+	sc_in<sc_uint<16> > ain, bin;
 	sc_in<bool> ci, as;
-	sc_out<sc_uint<16> > sum;
+	sc_out<sc_uint<16
+	> > sum;
 	sc_out<bool> co;
 	sc_out<bool> zflag, oflag, lflag;
+	bool co0, co1, co2, co3;
+	bool coi0, coi1, coi2, coi3;
 	sc_uint<16> sum_s, sum_f;
 
 	// 1-bit ripple carry fulladder, note the cof reference bool&
@@ -33,29 +36,22 @@ SC_MODULE(add_sub) {
 		for (int i = 0; i < 16; i++) {
 			inb[i] = inb[i] ^ as;
 		}
-		sc_uint<4> one;
+		sc_uint<16> one;
 		one[0] = as;
 		bool temp0 = false;
 		bool temp1 = ci.read();
 		for (int i = 0; i < 16; i++) {
 			temp0 = temp1;
-			sum_s[i] = fulladder(ain.read()[0], inb[0], temp0, temp1);
+			sum_s[i] = fulladder(ain.read()[i], inb[i], temp0, temp1);
 		}
-		// sum_s[0] = fulladder(ain.read()[0], inb[0], ci.read(), co0);
-		// sum_s[1] = fulladder(ain.read()[1], inb[1], co0, co1);
-		// sum_s[2] = fulladder(ain.read()[2], inb[2], co1, co2);
-		// sum_s[3] = fulladder(ain.read()[3], inb[3], co2, co3);
 
 		bool tempi0 = false;
 		bool tempi1 = false;
 		for (int i = 0; i < 16; i++) {
 			tempi0 = tempi1;
-			sum_f[i] = fulladder(sum_s[0], one[0], tempi0, tempi1);
+			sum_f[i] = fulladder(sum_s[i], one[i], tempi0, tempi1);
 		}
-		// sum_f[0] = fulladder(sum_s[0], one[0], false, coi0);
-		// sum_f[1] = fulladder(sum_s[1], one[1], coi0, coi1);
-		// sum_f[2] = fulladder(sum_s[2], one[2], coi1, coi2);
-		// sum_f[3] = fulladder(sum_s[3], one[3], coi2, coi3);
+
 
 		sum.write(sum_f);
 		co.write(temp1);

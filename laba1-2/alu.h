@@ -6,7 +6,7 @@
 
 SC_MODULE(alu) {
 	sc_in<sc_uint<16> > ain, bin;
-	sc_signal<bool> ciS, as, coS;
+	sc_signal<bool> ciS, asa,asb, coS;
 	sc_signal<bool> ciA, coA;
 	sc_in<sc_uint<4>> control;
 	sc_out<sc_uint<16> > sum;
@@ -24,15 +24,17 @@ SC_MODULE(alu) {
 	void AND(/* arguments */) {
 		/* code */
 		for (int i = 0; i < 16;i++)
-			sum_and = ain.read() & bin.read();
+			sum_and[i] = ain.read()[i] & bin.read()[i];
 	}
 	void OR(/* arguments */) {
 		/* code */
-		sum_or = ain.read() | bin.read();
+		for (int i = 0; i < 16; i++)
+			sum_or[i] = ain.read()[i] | bin.read()[i];
 	}
 	void NOTA(/* arguments */) {
 		/* code */
-		sum_nota = ~ain.read();
+		for (int i = 0; i < 16; i++)
+			sum_nota[i] = ~ain.read()[i];
 	}
 
 	void run(/* arguments */) {
@@ -49,9 +51,9 @@ SC_MODULE(alu) {
 		}
 		if (control.read() == 1) {
 			sum.write(sum_sub);
-			lflag.write(lflagA);
-			oflag.write(oflagA);
-			zflag.write(zflagA);
+			lflag.write(lflagB);
+			oflag.write(oflagB);
+			zflag.write(zflagB);
 		}
 		if (control.read() == 2) {
 			sum.write(sum_xor);
@@ -76,26 +78,27 @@ SC_MODULE(alu) {
 		DUT.ain(ain);
 		DUT.bin(bin);
 		DUT.ci(ciA);
-		as.write(false);
-		DUT.as(as);
+		asa.write(false);
+		DUT.as(asa);
 		DUT.sum(sum_add);
 		DUT.co(coA);
 		DUT.zflag(zflagA);
 		DUT.lflag(lflagA);
 		DUT.oflag(oflagA);
 
+
 		SUBB.ain(ain);
 		SUBB.bin(bin);
 		SUBB.ci(ciS);
-		as.write(true);
-		SUBB.as(as);
+		asb.write(true);
+		SUBB.as(asb);
 		SUBB.sum(sum_sub);
 		SUBB.co(coS);
 		SUBB.zflag(zflagB);
 		SUBB.oflag(oflagB);
 		SUBB.lflag(lflagB);
 		SC_METHOD(run);
-		sensitive << ain << bin << ciA << as << control;
+		sensitive << control;
 	}
 
 

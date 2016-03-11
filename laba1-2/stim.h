@@ -1,3 +1,9 @@
+//------------------------------------------------------------------
+// Simple 4-bits adder
+//
+// SystemC for VHDL engineers
+// (c)www.ht-lab.com
+//------------------------------------------------------------------
 #ifndef STIM_H
 #define STIM_H
 
@@ -10,49 +16,20 @@ SC_MODULE(stim) {
 
 	void ps1() {
 
-		ain.write("0b0000000000000000");
-		bin.write("0b0000000000000000");
-		as.write(true);
-		ci.write(false);
+		ain.write(4);
+		bin.write(3);
 		wait();
 
-		// ain.write("0b0001");
-		// bin.write("0b0101");
-		// as.write(false);
-		// ci.write(false);
-		// wait();
-		//
-		// ain.write("0b0001");
-		// bin.write("0b0101");
-		// as.write(true);
-		// ci.write(false);
-		// wait();
-		//
-		// ain.write("0b0100");
-		// bin.write("0b0001");
-		// as.write(false);
-		// ci.write(false);
-		// wait();
-		//
-		// ain.write("0b0100");
-		// bin.write("0b0001");
-		// as.write(true);
-		// ci.write(false);
-		// wait();
-		//
-		// ain.write("0b0001");
-		// bin.write("0b0001");
-		// as.write(false);
-		// ci.write(false);
-		// wait();
-		//
-		// ain.write("0b0001");
-		// bin.write("0b0001");
-		// as.write(true);
-		// ci.write(false);
-		// wait();
+		ain.write(4);
+		bin.write(3);
+		wait();
 
-		sc_stop();                          // End simulation
+		ain.write(4);
+		bin.write(3);
+		wait();
+
+
+		sc_stop();                     // End simulation
 	}
 
 	SC_CTOR(stim) {
@@ -60,5 +37,4 @@ SC_MODULE(stim) {
 		sensitive << clk.pos();
 	}
 };
-
 #endif

@@ -107,7 +107,7 @@
     <ClInclude Include="check.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="alu.h">
+    <ClInclude Include="multiply.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
