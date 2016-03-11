@@ -42,7 +42,12 @@ SC_MODULE(multiplier) {
 				_a = ss;
 				c = oflag;
 			}
-			//shift
+			/*
+				shift
+				C  A    Q    M 
+				1 1011 1001 1011 init
+				0 1101 1100 1011 shft
+			*/
 			//shift q
 			_q = _q >> 1;
 			// shift last bit of a to first bit of q
