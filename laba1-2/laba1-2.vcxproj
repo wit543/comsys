@@ -235,8 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="adder.h" />
+    <ClInclude Include="alu.h" />
     <ClInclude Include="check.h" />
-    <ClInclude Include="multiply.h" />
+    <ClInclude Include="multiplier.h" />
     <ClInclude Include="stim.h" />
   </ItemGroup>
   <ItemGroup>

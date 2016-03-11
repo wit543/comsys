@@ -16,20 +16,6 @@ SC_MODULE(stim) {
 
 	void ps1() {
 
-		ain.write(4);
-		bin.write(3);
-		wait();
-
-		ain.write(4);
-		bin.write(3);
-		wait();
-
-		ain.write(4);
-		bin.write(3);
-		wait();
-
-
-		sc_stop();                     // End simulation
 	}
 
 	SC_CTOR(stim) {

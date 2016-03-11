@@ -23,8 +23,6 @@ SC_MODULE(check) {
 	sc_uint<5> sumc;
 
 	void pc1() {
-		cout << "mul " << ain.read() << " - " << bin.read() << " + " << ci.read() << " = " <<sum<<" expect: "<< ain.read()*bin.read();
-		cout << endl;
 	}
 
 	SC_CTOR(check) {
