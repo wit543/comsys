@@ -39,8 +39,8 @@ int sc_main(int argc, char* argv[])
 	*/
 
 	
-	ain.write(-5);
-	bin.write(7);
+	ain.write(3);
+	bin.write(4);
 	sc_start(1000, SC_NS);               // Run simulation
 	cout << ain << "*" << bin << " = " << out << " ";
 	

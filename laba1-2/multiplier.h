@@ -21,7 +21,7 @@ SC_MODULE(multiplier) {
 	// carry in/out
 	bool _qn;
 	// output to the caller
-	sc_out<sc_int<32> > out;
+	sc_out< sc_int<32> > out;
 	//alu
 	alu ALUA;
 	//flag
@@ -114,9 +114,11 @@ SC_MODULE(multiplier) {
 		for (int i = 0; i <= 15; i++) {
 			outi[16 + i] = _a[i];
 		}
+		
 		for (int i = 31; i >=0; i--) {
 			cout << outi[i];
 		}
+		
 		cout << endl;
 		out.write(outi);
 	}

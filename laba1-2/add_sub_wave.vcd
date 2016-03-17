@@ -1,5 +1,5 @@
 $date
-     Mar 17, 2016       23:24:55
+     Mar 17, 2016       23:54:24
 $end
 
 $version
@@ -22,8 +22,8 @@ All initial values are dumped below at time 0 sec = 0 timescale units.
 $end
 
 $dumpvars
-b1111111111111011 aaaaa
-b111 aaaab
+b11 aaaaa
+b100 aaaab
 1aaaac
 $end
 
