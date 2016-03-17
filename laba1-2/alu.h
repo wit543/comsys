@@ -48,7 +48,6 @@ SC_MODULE(alu) {
 			temp0 = temp1;
 			sum_s[i] = fulladder(ain.read()[i], inb[i], temp0, temp1);
 		}
-		/*cout << inb<<" " <<as;*/
 		bool tempi0 = false;
 		bool tempi1 = false;
 		// (A+inv(B))+1
@@ -101,7 +100,6 @@ SC_MODULE(alu) {
 			lflag.write(lflagA);
 			oflag.write(oflagA);
 			zflag.write(zflagA);
-			/*cout << "add "<<sum_add;*/
 		}
 		if (control.read() == 1) {
 			as = 0;
@@ -110,7 +108,6 @@ SC_MODULE(alu) {
 			lflag.write(lflagB);
 			oflag.write(oflagB);
 			zflag.write(zflagB);
-			/*cout << "sub";*/
 		}
 		if (control.read() == 2) {
 			sum.write(sum_xor);

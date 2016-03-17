@@ -4,8 +4,8 @@
 
 int sc_main(int argc, char* argv[])
 {
-	sc_signal<sc_uint<16> > ain, bin;
-	sc_signal<sc_uint<32> > out;
+	sc_signal<sc_int<16> > ain, bin;
+	sc_signal<sc_int<32> > out;
 	sc_clock clk("clk", 10, SC_NS, 0.5);   // Create a clock signal
 
 										   //trace
@@ -25,6 +25,7 @@ int sc_main(int argc, char* argv[])
 
 	
 	//test : multiplication table
+	/*
 	for (int i = 1; i < 13; i++) {
 		for (int j = 2; j < 13; j++) {
 
@@ -35,12 +36,13 @@ int sc_main(int argc, char* argv[])
 		}
 		cout << endl;
 	}
+	*/
 
-	/*
-	ain.write(5);
+	
+	ain.write(-5);
 	bin.write(7);
 	sc_start(1000, SC_NS);               // Run simulation
 	cout << ain << "*" << bin << " = " << out << " ";
-	*/
+	
 	return 0;                           // Return OK, no errors.
 }

@@ -5,7 +5,7 @@
 #include "alu.h"
 SC_MODULE(multiplier) {
 	// input
-	sc_in<sc_uint<16> > ain, bin;
+	sc_in<sc_int<16> > ain, bin;
 	/*
 	signal to alu
 	this:alu
@@ -21,7 +21,7 @@ SC_MODULE(multiplier) {
 	// carry in/out
 	bool _qn;
 	// output to the caller
-	sc_out<sc_uint<32> > out;
+	sc_out<sc_int<32> > out;
 	//alu
 	alu ALUA;
 	//flag
@@ -107,13 +107,17 @@ SC_MODULE(multiplier) {
 		//						a								q
 		//			 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0][0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 		// out[32] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
-		sc_uint<32> outi;
-		for (int i = 0; i < 15; i++) {
+		sc_int<32> outi;
+		for (int i = 0; i <= 15; i++) {
 			outi[i] = _q[i];
 		}
-		for (int i = 0; i < 15; i++) {
+		for (int i = 0; i <= 15; i++) {
 			outi[16 + i] = _a[i];
 		}
+		for (int i = 31; i >=0; i--) {
+			cout << outi[i];
+		}
+		cout << endl;
 		out.write(outi);
 	}
 	SC_CTOR(multiplier) : ALUA("ALU") {
