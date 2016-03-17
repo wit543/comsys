@@ -11,6 +11,7 @@ SC_MODULE(alu) {
 	sc_out<bool> zflag, oflag, lflag;
 	sc_signal<bool> zflagA, oflagA, lflagA;
 	sc_signal<bool> zflagB, oflagB, lflagB;
+	sc_in<bool> enable;
 	sc_uint<16> sum_add, sum_sub, sum_xor, sum_or, sum_nota, sum_stl, sum_and;
 	sc_uint<16> sum_s, sum_f;
 
@@ -47,7 +48,7 @@ SC_MODULE(alu) {
 			temp0 = temp1;
 			sum_s[i] = fulladder(ain.read()[i], inb[i], temp0, temp1);
 		}
-
+		/*cout << inb<<" " <<as;*/
 		bool tempi0 = false;
 		bool tempi1 = false;
 		// (A+inv(B))+1
@@ -59,7 +60,7 @@ SC_MODULE(alu) {
 		}
 
 		// write out
-		sum_add=sum_f;
+		sum_add = sum_f;
 		co.write(temp1);
 
 		//check flag
@@ -94,17 +95,22 @@ SC_MODULE(alu) {
 		sum_stl[0] = lflagB;
 		//check for what to output
 		if (control.read() == 0) {
+			as = 1;
 			ADD__SUB();
 			sum.write(sum_add);
 			lflag.write(lflagA);
 			oflag.write(oflagA);
 			zflag.write(zflagA);
+			/*cout << "add "<<sum_add;*/
 		}
 		if (control.read() == 1) {
-			sum.write(sum_sub);
+			as = 0;
+			ADD__SUB();
+			sum.write(sum_add);
 			lflag.write(lflagB);
 			oflag.write(oflagB);
 			zflag.write(zflagB);
+			/*cout << "sub";*/
 		}
 		if (control.read() == 2) {
 			sum.write(sum_xor);
@@ -127,11 +133,12 @@ SC_MODULE(alu) {
 	SC_CTOR(alu) {
 
 		SC_METHOD(run);
-		sensitive << control << ain << bin;
+		sensitive << enable;
 	}
 
 
 
 };
+
 
 #endif

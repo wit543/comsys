@@ -1,5 +1,4 @@
 ﻿  sc_main.cpp
   Unknown compiler version - please run the configure tests and report the results
-c:\users\wit\documents\visual studio 2015\projects\laba1-2\laba1-2\adder.h(53): warning C4805: '^': unsafe mix of type 'sc_dt::uint64' and type 'sc_core::sc_in<bool>::data_type' in operation
-c:\users\wit\documents\visual studio 2015\projects\laba1-2\laba1-2\alu.h(41): warning C4805: '^': unsafe mix of type 'sc_dt::uint64' and type 'bool' in operation
+c:\users\wit\documents\visual studio 2015\projects\laba1-2\laba1-2\alu.h(42): warning C4805: '^': unsafe mix of type 'sc_dt::uint64' and type 'bool' in operation
   laba1-2.vcxproj -> C:\Users\WIT\Documents\Visual Studio 2015\Projects\laba1-2\Debug\laba1-2.exe
